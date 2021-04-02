@@ -25,3 +25,9 @@ global_id-*.tar
 
 # Temporary files for e.g. tests
 /tmp
+
+# vscode
+/.vscode
+
+# ElixirLS
+/.elixir_ls
