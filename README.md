@@ -2,6 +2,10 @@
 
 An example solution for the Shoreline problem described on [Elixir Forum](https://elixirforum.com/t/elixir-engineer-at-shoreline-onsite-and-remote/38638)
 
+Current implementation is able to generate up to 2_048_000 ids per second per process
+and should guarantee ids uniqueness until 2248-09-26 15:10:22.208 UTC (43 bits timestamp).
+Varying timestamp/counter bit length it is possible to change ideal maximum performance.
+
 Real world example, Intel Xeon E5-2665 v1, 2 vCPU VM:
 
 ```(elixir)
