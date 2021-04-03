@@ -12,7 +12,7 @@ defmodule GlobalId do
 
   @timestamp_length 43
   @counter_length 11
-  @counter_max 2047
+  @counter_max round(:math.pow(2, @counter_length)) - 1
 
   @doc """
   Please implement the following function.
