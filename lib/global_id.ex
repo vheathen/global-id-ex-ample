@@ -74,6 +74,9 @@ defmodule GlobalId do
   # because of the timestamp generator source time drift) we need to wait till
   # that future to ensure the next ids are unique.
   #
+  # Here also can be different strategies: for example, not waiting but retries in case time
+  # fluctuation was incidental and temporary.
+  #
   defp do_get_id(
          <<future_timestamp::@timestamp_length, _counter::@counter_length, _node_id::10>> =
            last_id,
