@@ -91,10 +91,9 @@ defmodule GlobalId do
   # And if the last id timestamp from the past we can reset counter to zero
   #
   defp do_get_id(
-         <<past_timestamp::@timestamp_length, _counter::@counter_length, _node_id::10>>,
+         <<_past_timestamp::@timestamp_length, _counter::@counter_length, _node_id::10>>,
          <<current_timestamp::@timestamp_length>>
-       )
-       when past_timestamp < current_timestamp,
+       ),
        do: return_id(current_timestamp, 0)
 
   defp return_id(timestamp, counter) do
