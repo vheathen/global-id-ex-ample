@@ -9,7 +9,7 @@ defmodule GlobalId.Benchmark do
   @spec benchmark(non_neg_integer(), non_neg_integer()) :: :ok
   def benchmark(ids_amount \\ 1_000_000, node_id \\ nil)
 
-  def benchmark(ids_amount, nil), do: benchmark(ids_amount, :random.uniform(1024) - 1)
+  def benchmark(ids_amount, nil), do: benchmark(ids_amount, :rand.uniform(1024) - 1)
 
   def benchmark(ids_amount, node_id) do
     start = System.monotonic_time()
@@ -66,7 +66,7 @@ defmodule GlobalId.Benchmark do
   end
 
   defp gen_node_id(node_ids) do
-    id = :random.uniform(1024) - 1
+    id = :rand.uniform(1024) - 1
 
     if id in node_ids,
       do: gen_node_id(node_ids),

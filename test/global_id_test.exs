@@ -19,7 +19,7 @@ defmodule GlobalIdTest do
   end
 
   defp gen_node_id(node_ids) do
-    id = :random.uniform(1024) - 1
+    id = :rand.uniform(1024) - 1
 
     if id in node_ids,
       do: gen_node_id(node_ids),

@@ -7,7 +7,7 @@ defmodule GlobalId do
   Varying timestamp/counter bit length it is possible to change maximum generation performance.
   """
 
-  @node_id :random.uniform(1024) - 1
+  @node_id :rand.uniform(1024) - 1
   @endless_retries true
 
   @timestamp_length 43
